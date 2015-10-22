@@ -15,24 +15,24 @@ Running
 
 Simple case to get up and running now:
 
-    $ docker run -p 1883:1883 freefoote/mosquitto-simple
+    $ docker run -d -p 1883:1883 freefoote/mosquitto-simple
 
 Using a local persistent directory:
 
-    $ docker run -p 1883:1883 \
+    $ docker run -d -p 1883:1883 \
     -v `pwd`/data:/var/lib/mosquitto \
     freefoote/mosquitto-simple
 
 Setting authentication:
 
-    $ docker run -p 1883:1883 \
+    $ docker run -d -p 1883:1883 \
     -e "MQTT_USER=admin" -e "MQTT_PASS=password" \
     freefoote/mosquitto-simple
 
 Custom configuration:
 
     $ mkdir conf
-    $ docker run -p 1883:1883 \
+    $ docker run -d -p 1883:1883 \
     -v `pwd`/conf:/etc/mosquitto/conf.d \
     freefoote/mosquitto-simple
 

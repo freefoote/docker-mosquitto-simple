@@ -2,6 +2,8 @@
 
 set -e
 
+chown -R mosquitto.mosquitto /var/lib/mosquitto
+
 if [ "$MQTT_USER" != "" ] && [ "$MQTT_PASS" != "" ];
 then
 	echo "Setting username and password..."
